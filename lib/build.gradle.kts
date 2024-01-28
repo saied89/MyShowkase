@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    id("com.google.devtools.ksp")
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -40,11 +40,7 @@ android {
 }
 
 dependencies {
-
-    implementation("com.google.devtools.ksp:symbol-processing-api:1.9.21-1.0.15")
-
-
-    debugImplementation("com.airbnb.android:showkase:1.0.2")
+    debugImplementation(libs.showkase)
     implementation("com.airbnb.android:showkase-annotation:1.0.2")
     kspDebug("com.airbnb.android:showkase-processor:1.0.2")
 

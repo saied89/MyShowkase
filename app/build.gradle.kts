@@ -51,7 +51,7 @@ android {
 
 dependencies {
     implementation(project(":lib"))
-    debugImplementation("com.airbnb.android:showkase:1.0.2")
+    debugImplementation(libs.showkase)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

@@ -3,5 +3,6 @@ plugins {
     alias(libs.plugins.androidApplication) apply false
     alias(libs.plugins.jetbrainsKotlinAndroid) apply false
     alias(libs.plugins.androidLibrary) apply false
-    id("com.google.devtools.ksp") version "1.9.21-1.0.15" apply false
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.jetbrainsKotlinJvm) apply false
 }
