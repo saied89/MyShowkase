@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -23,6 +24,12 @@ android {
             )
         }
     }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.8"
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -33,6 +40,19 @@ android {
 }
 
 dependencies {
+
+    implementation("com.google.devtools.ksp:symbol-processing-api:1.9.21-1.0.15")
+
+
+    debugImplementation("com.airbnb.android:showkase:1.0.2")
+    implementation("com.airbnb.android:showkase-annotation:1.0.2")
+    kspDebug("com.airbnb.android:showkase-processor:1.0.2")
+
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.ui.graphics)
+    implementation(libs.androidx.ui.tooling.preview)
+    implementation(libs.androidx.material3)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
