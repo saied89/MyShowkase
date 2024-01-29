@@ -13,12 +13,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.core.content.ContextCompat.startActivity
 import com.airbnb.android.showkase.models.Showkase
-import dev.saied.lib.SpecialButton
-import dev.saied.lib.getBrowserIntent
 import dev.saied.myshowkase.ui.theme.MyShowkaseTheme
-import kotlin.concurrent.thread
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,7 +39,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
         text = "Hello $name!",
         modifier = modifier.clickable {
-            context.startActivity(Showkase.getBrowserIntent(context = context))
         }
     )
 }

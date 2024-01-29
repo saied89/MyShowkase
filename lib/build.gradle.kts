@@ -41,8 +41,7 @@ android {
 
 dependencies {
     debugImplementation(libs.showkase)
-    implementation("com.airbnb.android:showkase-annotation:1.0.2")
-    kspDebug("com.airbnb.android:showkase-processor:1.0.2")
+    kspDebug(project(":processor"))
 
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)

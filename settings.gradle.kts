@@ -23,3 +23,4 @@ rootProject.name = "My Showkase"
 include(":app")
 include(":lib")
 include(":processor")
+include(":annotations")
