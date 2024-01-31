@@ -35,7 +35,10 @@ class CatalogueProcessor(
         override fun visitFunctionDeclaration(function: KSFunctionDeclaration, data: Unit) {
             if (function.annotations.any { it.shortName.asString() == "Preview" }) {
                 functions.add(function)
-                logger.warn(">>>>>PREVIEW:${ function.parameters.first().hasDefault }", function)
+                val parameter = function.parameters.first()
+                val annotation = parameter.annotations.first()
+                val value = annotation.arguments.first().value as Int
+                logger.warn(">>>>>PREVIEW:$value", function)
             }
         }
     }

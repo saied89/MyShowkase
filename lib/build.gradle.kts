@@ -42,6 +42,7 @@ android {
 dependencies {
     debugImplementation(libs.showkase)
     kspDebug(project(":processor"))
+    implementation(project(":annotations"))
 
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
